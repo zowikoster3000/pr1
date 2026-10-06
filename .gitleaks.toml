@@ -1,0 +1,6 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test fixtures contain no real secrets"
+paths = ['''packages/core/src/__fixtures__/.*''']

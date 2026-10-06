@@ -1,0 +1,88 @@
+{
+  "_comment": "Hand-written from SerpApi's documented Google Flights response shape. Replace with a recorded response once a key is available.",
+  "search_metadata": {
+    "google_flights_url": "https://www.google.com/travel/flights?hl=en&tfs=CBwQAhoeEgoyMDI2LTExLTEwagcIARIDQU1TcgcIARIDTElT"
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Amsterdam Airport Schiphol",
+            "id": "AMS",
+            "time": "2026-11-10 09:00"
+          },
+          "arrival_airport": {
+            "name": "Humberto Delgado Airport",
+            "id": "LIS",
+            "time": "2026-11-10 11:05"
+          },
+          "duration": 185,
+          "airline": "KLM",
+          "flight_number": "KL 1691"
+        }
+      ],
+      "total_duration": 185,
+      "price": 129
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Amsterdam Airport Schiphol",
+            "id": "AMS",
+            "time": "2026-11-10 06:10"
+          },
+          "arrival_airport": {
+            "name": "Adolfo Suárez Madrid–Barajas Airport",
+            "id": "MAD",
+            "time": "2026-11-10 08:45"
+          },
+          "duration": 155,
+          "airline": "Iberia",
+          "flight_number": "IB 3721"
+        },
+        {
+          "departure_airport": {
+            "name": "Adolfo Suárez Madrid–Barajas Airport",
+            "id": "MAD",
+            "time": "2026-11-10 10:00"
+          },
+          "arrival_airport": {
+            "name": "Humberto Delgado Airport",
+            "id": "LIS",
+            "time": "2026-11-10 10:20"
+          },
+          "duration": 80,
+          "airline": "Iberia",
+          "flight_number": "IB 3102"
+        }
+      ],
+      "layovers": [{ "duration": 75, "name": "Adolfo Suárez Madrid–Barajas Airport", "id": "MAD" }],
+      "total_duration": 310,
+      "price": 98
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": {
+            "name": "Amsterdam Airport Schiphol",
+            "id": "AMS",
+            "time": "2026-11-10 13:00"
+          },
+          "arrival_airport": {
+            "name": "Humberto Delgado Airport",
+            "id": "LIS",
+            "time": "2026-11-10 15:00"
+          },
+          "duration": 180,
+          "airline": "TAP Air Portugal",
+          "flight_number": "TP 663"
+        }
+      ],
+      "total_duration": 180
+    }
+  ]
+}

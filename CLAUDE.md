@@ -18,17 +18,19 @@ Build a web app that finds the **best real flight deals** for a user's trip, fas
 the mainstream search engines, and presents them in a calm, minimal interface.
 
 "Best" is not just "cheapest". Rank on a **Deal Score** (0–100) combining:
+
 - total price incl. bags/seat fees for the chosen fare family,
 - price vs. the route's historical median (how unusual is this price?),
 - total travel time, number of stops, layover quality (too short / overnight / airport change),
 - departure/arrival time-of-day penalties,
 - airline/itinerary reliability (self-transfer risk, separate tickets).
 
-Every score must be explainable: the UI shows *why* a result scored the way it did.
+Every score must be explainable: the UI shows _why_ a result scored the way it did.
 
 ## 3. Core features (MVP → V1)
 
 **MVP (ship first)**
+
 1. Search: origin, destination, dates, passengers, cabin. Airport/city autocomplete (IATA).
 2. **Flexible search**: ±3 days and a month calendar view showing cheapest price per day.
 3. **Nearby airports**: optionally include airports within N km of origin/destination.
@@ -37,6 +39,7 @@ Every score must be explainable: the UI shows *why* a result scored the way it d
 6. Price alerts: user saves a route + max price, gets e-mail when a fare drops below it.
 
 **V1 "hacks" (each one a toggle, each one with an honest risk label)**
+
 - **Split / self-transfer tickets**: combine two one-ways or two separate tickets via a hub when cheaper. Label: "Separate tickets — missed connection is your risk."
 - **Open-jaw & multi-city combos** that undercut a plain return.
 - **"Anywhere" / explore mode**: cheapest destinations from an origin in a date window, shown as a list + map.
@@ -84,6 +87,7 @@ Order of preference. Do not skip ahead without a reason recorded in `docs/decisi
 ## 6. Visual language & UX
 
 **Palette — strictly monochrome.** Colour is never used for meaning; use weight, size, position, and icons.
+
 ```
 --black:   #000000   primary text, primary buttons
 --ink:     #111111   dark surfaces (dark mode background)
@@ -93,6 +97,7 @@ Order of preference. Do not skip ahead without a reason recorded in `docs/decisi
 --grey-100:#F2F2F2   subtle fills, hover rows
 --white:   #FFFFFF   background
 ```
+
 Dark mode = inverted tokens. All text meets WCAG 2.2 AA contrast.
 
 **Typography — Helvetica Neue feel.**
@@ -102,6 +107,7 @@ Scale: 12 / 14 / 16 / 20 / 28 / 44 px. Weights 400 and 600 only (plus 300 for ve
 Tabular numerals (`font-variant-numeric: tabular-nums`) for all prices and times. Tight tracking on large sizes.
 
 **Layout & components**
+
 - 8-px spacing grid, generous whitespace, 1-px hairline dividers instead of cards and shadows. Border radius 0–4 px.
 - Home = one sentence-style search bar ("From Amsterdam to Anywhere, in March, 2 adults") with keyboard-first input.
 - Results = dense, aligned rows: times · duration · stops · airline · **price (largest element)** · Deal Score.
@@ -149,13 +155,13 @@ Tabular numerals (`font-variant-numeric: tabular-nums`) for all prices and times
 
 ## 10. Build phases
 
-| Phase | Outcome |
-|---|---|
-| 0. Foundation | Monorepo, CI, lint/test, design tokens, typography, base layout, security headers, deploy preview. |
-| 1. Search MVP | One official API adapter, normalised `Offer`, streaming results, Deal Score v1, results UI, deep links. |
-| 2. Flexibility | Second provider, dedupe, flexible dates calendar, nearby airports, Redis cache. |
-| 3. Alerts & history | Accounts (magic link), saved searches, price-history collector, e-mail alerts. |
-| 4. Hacks | Split tickets, open-jaw, explore/anywhere, anomaly detector, (informational) hidden-city. |
-| 5. Hardening | Load test, observability dashboards, pen-test checklist, GDPR flows, prediction model. |
+| Phase               | Outcome                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------- |
+| 0. Foundation       | Monorepo, CI, lint/test, design tokens, typography, base layout, security headers, deploy preview.      |
+| 1. Search MVP       | One official API adapter, normalised `Offer`, streaming results, Deal Score v1, results UI, deep links. |
+| 2. Flexibility      | Second provider, dedupe, flexible dates calendar, nearby airports, Redis cache.                         |
+| 3. Alerts & history | Accounts (magic link), saved searches, price-history collector, e-mail alerts.                          |
+| 4. Hacks            | Split tickets, open-jaw, explore/anywhere, anomaly detector, (informational) hidden-city.               |
+| 5. Hardening        | Load test, observability dashboards, pen-test checklist, GDPR flows, prediction model.                  |
 
 Start with **Phase 0**. Produce the plan first.
